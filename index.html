@@ -1,1 +1,85 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+      
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:800px;"></div>
+    <script> 
+                    var myChart = echarts.init(document.getElementById('main'));
+                    myChart.setOption({
+                        baseOption: {
+                "timeline": {
+                    //loop: false,        
+                    "axisType": "category",
+                    "show": true,
+                    "autoPlay": true,
+                    "playInterval": 1500,
+                    "data" : ["港島", "九龍", "新界"]
+                },
+                "grid": {
+                    "containLabel": true
+                },
+                "xAxis": [{
+                    "type" : "value",
+                    "name": "％",
+                    "max": 200
+                }, ],
+                "yAxis": [{
+                    "type": "category",
+                    "inverse": true,
+                }],
+                "series": [{
+                    "type": "bar",
+                }, ]
+            },
+            //变量则写在options中
+                    options: [
+                                {
+                                    "yAxis": [{
+                                        "data": ["南區．左岸","香島","形薈","維港頌","尚譽"," 28 ABERDEEN ST."]
+                                    }],
+                                    "title": {
+                                        "text": "新盤呎價比較同區呎價比例"
+                                    },
+                                    "series": [{
+                                            "data": [143.77,65.60,45.10,137.33,80.25,130.10]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "yAxis": [{
+                                        "data": ["柏傲灣","南昌一號","尚都","奧城．西岸","天鑄(第2期)","加多利軒","皓畋","ONE HOMANTIN","君逸山","賢文禮士"]
+                                    }],
+                                    "title": {
+                                        "text": "新盤呎價比較同區呎價比例"
+                                    },
+                                    "series": [{
+                                            "data": [36.65,35.60,20.72,76.72,126.13,68.36,59.28,53.50,37.82,-6.79]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "yAxis": [{
+                                        "data": ["MONTEREY","藍塘傲"," SAVANNAH","海天晉","海翩滙","薈晴","迎海．御峰","星漣海","薈朗","囍逸","匯璽","珀御","18 逸品","䨇寓"," NAPA","豐連","GRAND YOHO 第2期"," GRAND YOHO 第1期","朗屏8號","映御","高爾夫．御苑"]
+                                    }],
+                                    "title": {
+                                        "text": "新盤呎價比較同區呎價比例"
+                                    },
+                                    "series": [{
+                                            "data": [7.25,1.12,-3.48,-5.01,-14.20,19.30,8.82,8.01,8.01,6.88,73.16,9.10,3.08,3.08,-2.93,-24.41,31.64,8.94,5.31,-8.31,66.25]
+                                        },
+                                    ]
+                                },
+                            
+                            ]
+                        });
+    
+                    </script>
+</body>
+</html>
